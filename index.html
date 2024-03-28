@@ -8,7 +8,7 @@
 
     const appName = 'c:eqt_leadSubmitFormAura';
     const componentName = 'c:eqt_leadSubmitForm';
-    const lightningEndpoint = 'https://eqtpartners--sfdevpjmb.sandbox.my.site.com/leadform/';
+    const lightningEndpoint = 'https://eqtpartners--sfdevpjmb.sandbox.my.salesforce.com';
     const targetElement = document.querySelector("[data-lightning-out]");
     const componentAttributes = {
 
@@ -16,21 +16,9 @@
 try{
     $Lightning.use(
                 appName,
-                function (){
-                try{
-                  $Lightning.createComponent(
-                          componentName,
-                          componentAttributes,
-                          targetElement,
-                          function (cmp){
-                            console.log('lightning component created');
-                          }
-                  );
-                }catch(error){
-                    console.error(error);
-                }
+                () => {
                 },
-                lightningEndpoint
+                lightningEndpoint,
         );
 
 }catch(error){

@@ -10,6 +10,7 @@
     const componentName = 'c:eqt_leadSubmitForm';
     const lightningEndpoint = 'https://eqtpartners--sfdevpjmb.sandbox.my.salesforce.com';
     const targetElement = document.querySelector("[data-lightning-out]");
+    const accessToken = '00DPu000001Cutv!AQEAQEwxd3LMKVvWvo8tae2DxTnN.PuxLv3VRwaf0XucIviFIInPYU6Ozy1EVQYWlfSzmmUovxJLOaOgWRQu8UVhm9dXa6mm';
     const componentAttributes = {
 
     };
@@ -19,6 +20,7 @@ try{
                 () => {
                 },
                 lightningEndpoint,
+                accessToken
         );
 
 }catch(error){

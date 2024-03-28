@@ -1,25 +1,36 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Test LWC on External Site</title>
-</head>
-<body>
-    <div id="lwcContainer"></div>
     
-    <script src="https://eqtpartners--sfdevpjmb.sandbox.my.site.com/leadform/lightning/lightning.out.js"></script>
-    <script>
-        const lightningEndpoint = "https://eqtpartners--sfdevpjmb.sandbox.my.site.com/leadform/";
-        $Lightning.use("c:eqt_leadSubmitFormAura", () => {
-            $Lightning.createComponent(
-                "c:eqt_leadSubmitForm",
-                {},
-                "lwcContainer",
-                (component) => {
-                    console.log("Component created successfully!");
-                }
-            );
-        }, lightningEndpoint,
-        );
-    </script>
-</body>
+<script src="https://eqtpartners--sfdevpjmb.sandbox.my.site.com/leadform/lightning/lightning.out.js"></script>
+
+<div data-lightning-out="true"></div>
+
+  <script>
+
+    const appName = 'c:eqt_leadSubmitFormAura';
+    const componentName = 'c:eqt_leadSubmitForm';
+    const lightningEndpoint = 'https://eqtpartners--sfdevpjmb.sandbox.my.site.com/leadform/';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+
+    };
+
+    $Lightning.use(
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
+    );
+
+
+  </script>
+
+
 </html>

@@ -17,6 +17,7 @@ try{
     $Lightning.use(
                 appName,
                 function (){
+                try{
                   $Lightning.createComponent(
                           componentName,
                           componentAttributes,
@@ -25,6 +26,9 @@ try{
                             console.log('lightning component created');
                           }
                   );
+                }catch(error){
+                    console.error(error);
+                }
                 },
                 lightningEndpoint
         );

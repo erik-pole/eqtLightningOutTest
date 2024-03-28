@@ -5,8 +5,9 @@
 </head>
 <body>
     <div id="lwcContainer"></div>
-    <script src="https://eqtpartners--sfdevpjmb.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
+    <script src="https://eqtpartners--sfdevpjmb.sandbox.my.site.com/lightning/lightning.out.js"></script>
     <script>
+        const lightningEndpoint = "https://eqtpartners--sfdevpjmb.sandbox.my.site.com";
         $Lightning.use("c:eqt_leadSubmitFormAura", () => {
             $Lightning.createComponent(
                 "c:eqt_leadSubmitForm",
@@ -16,7 +17,8 @@
                     console.log("Component created successfully!");
                 }
             );
-        });
+        }, lightningEndpoint
+        );
     </script>
 </body>
 </html>

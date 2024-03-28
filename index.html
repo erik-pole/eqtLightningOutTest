@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test LWC on External Site</title>
+</head>
+<body>
+    <div id="lwcContainer"></div>
+    <script src="https://eqtpartners--sfdevpjmb.lightning.force.com/lightning/lightning.out.js"></script>
+    <script>
+        $Lightning.use("c:eqt_leadSubmitFormAura", () => {
+            $Lightning.createComponent(
+                "c:eqt_leadSubmitForm",
+                {},
+                "lwcContainer",
+                (component) => {
+                    console.log("Component created successfully!");
+                }
+            );
+        });
+    </script>
+</body>
+</html>

@@ -13,22 +13,26 @@
     const componentAttributes = {
 
     };
-
+try{
     $Lightning.use(
-            appName,
-            function (){
-              $Lightning.createComponent(
-                      componentName,
-                      componentAttributes,
-                      targetElement,
-                      function (cmp){
-                        console.log('lightning component created');
-                      }
-              );
-            },
-            lightningEndpoint
-    );
+                appName,
+                function (){
+                  $Lightning.createComponent(
+                          componentName,
+                          componentAttributes,
+                          targetElement,
+                          function (cmp){
+                            console.log('lightning component created');
+                          }
+                  );
+                },
+                lightningEndpoint
+        );
 
+}catch(error){
+    console.error(error);
+}
+    
 
   </script>
 

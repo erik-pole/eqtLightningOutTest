@@ -1,9 +1,10 @@
 function run(){
-  console.log('hej5');
+  console.log('hej6');
   try{
     jsforce.browser.init({
       clientId: '3MVG9xj60O9CjKHqAR6xaaX9u0JgiHcSo.P3c.i3Z6SRtOgiwUxIOQvy6EgSbassifvmoB8Gvt722lSqpIUq0',
-      redirectUri: 'https://erik-pole.github.io/eqtLightningOutTest/'
+      redirectUri: 'https://erik-pole.github.io/eqtLightningOutTest/',
+      proxyUrl: 'https://rocky-falls-04834-0aad17553ffc.herokuapp.com/proxy/'
     });
     jsforce.browser.login();
     jsforce.browser.on('connect', function(connection) {

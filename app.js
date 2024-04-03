@@ -6,15 +6,24 @@ function run(){
       redirectUri: 'https://erik-pole.github.io/eqtLightningOutTest/',
       proxyUrl: 'https://rocky-falls-04834-0aad17553ffc.herokuapp.com/proxy/'
     });
+    console.log('Before login call');
     jsforce.browser.login();
+    console.log('After login call');
+    
     jsforce.browser.on('connect', function(connection) {
-      console.log('Connected to Salesforce!');
-      // Access token is available in connection.accessToken
+      console.log('Connected to Salesforce!', connection);
       let accessToken = connection.accessToken;
-      console.log(accessToken);
-      // Call the function to render your Lightning Out component with the access token
-      //renderLightningOutComponent({ accessToken: accessToken });
+      console.log('Access Token:', accessToken);
     });
+    
+    jsforce.browser.on('disconnect', function() {
+      console.log('Disconnected from Salesforce');
+    });
+    
+    jsforce.browser.on('error', function(error) {
+      console.log('Error', error);
+    });
+
   }
   catch(error){console.error(error)}
 }
